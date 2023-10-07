@@ -12,38 +12,60 @@ public class Converter {
         int system = scanner.nextInt();
         System.out.println("Введите значение, которое хотите перевести");
         double value = scanner.nextDouble();
-        System.out.println("Ответ:");
+        System.out.println("Введите номер единицы измерения, из которой вы хотите перевести");
+        int unit;
         switch (system) {
             case 1:
-                System.out.println(si(system, value));
+                //TODO: вывести варианты единиц измерения для СИ
+                unit = scanner.nextInt();
+                System.out.println("Ответ: " + si(unit, value));
                 break;
             case 2:
-                System.out.println(english(system, value));
+                System.out.println("1. Дюйм\n" +
+                        "2. Фут\n" +
+                        "3. Ярд\n" +
+                        "4. Миля");
+                unit = scanner.nextInt();
+                System.out.println("Ответ: " + english(unit, value));
                 break;
             case 3:
-                System.out.println(oldRussian(system, value));
+                System.out.println("1. Вершок\n" +
+                        "2. Пядь\n" +
+                        "3. Локоть\n" +
+                        "4. Косая сажень\n" +
+                        "5. Маховая сажень\n" +
+                        "6. Фут\n" +
+                        "7. Дюйм\n" +
+                        "8. Сажень\n" +
+                        "9. Ярд\n" +
+                        "10. Верста\n" +
+                        "11. Аршин");
+                unit = scanner.nextInt();
+                System.out.println("Ответ: " + oldRussian(unit, value));
                 break;
             case 4:
-                System.out.println(roman(system, value));
+                //TODO: вывести варианты единиц измерения для римской СЕ
+                unit = scanner.nextInt();
+                System.out.println("Ответ: " + roman(unit, value));
                 break;
             default:
                 System.out.println("Неверное значение");
         }
     }
 
-    public static double si(int system, double value){
+    public static double si(int unit, double value){
         return 0;
     }
 
-    public static double english(int system, double value){
+    public static double english(int unit, double value){
         return 0;
     }
 
-    public static double oldRussian(int system, double value){
+    public static double oldRussian(int unit, double value){
         return 0;
     }
 
-    public static double roman(int system, double value){
+    public static double roman(int unit, double value){
         return 0;
     }
 }
