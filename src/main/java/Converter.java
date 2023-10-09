@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class Converter {
@@ -11,7 +12,7 @@ public class Converter {
                 "4. Римская");
         int system = scanner.nextInt();
         System.out.println("Введите значение, которое хотите перевести");
-        double value = scanner.nextDouble();
+        BigDecimal value = scanner.nextBigDecimal();
         System.out.println("Введите номер единицы измерения, из которой вы хотите перевести");
         int unit;
         switch (system) {
@@ -53,20 +54,60 @@ public class Converter {
         }
     }
 
-    public static double si(int unit, double value){
-        return 0;
+    public static BigDecimal si(int unit, BigDecimal value){
+        return BigDecimal.valueOf(0);
     }
 
-    public static double english(int unit, double value){
-        return 0;
+    public static BigDecimal english(int unit, BigDecimal value){
+        return BigDecimal.valueOf(0);
     }
 
-    public static double oldRussian(int unit, double value){
-        return 0;
+    public static BigDecimal oldRussian(int unit, BigDecimal value){
+        BigDecimal ans = BigDecimal.valueOf(0.0);
+        switch (unit){
+            case 1:
+                ans = BigDecimal.valueOf(0.0445).multiply(value);
+                break;
+                //TODO заменить все на BigDecimal
+            case 2:
+                ans = BigDecimal.valueOf(0.0445 * 4).multiply(value);
+                break;
+            case 3:
+                ans = BigDecimal.valueOf(0.45).multiply(value);
+                break;
+            case 4:
+                ans = BigDecimal.valueOf(2.48).multiply(value);
+                break;
+            case 5:
+                ans = BigDecimal.valueOf(1.76).multiply(value);
+                break;
+            case 6:
+                ans = BigDecimal.valueOf(0.31).multiply(value);
+                break;
+            case 7:
+                ans = BigDecimal.valueOf(0.025).multiply(value);
+                break;
+            case 8:
+                ans = BigDecimal.valueOf(2.13).multiply(value);
+                break;
+            case 9:
+                ans = BigDecimal.valueOf(0.91).multiply(value);
+                break;
+            case 10:
+                ans = BigDecimal.valueOf(1067).multiply(value);
+                break;
+            case 11:
+                ans = BigDecimal.valueOf(0.71).multiply(value);
+                break;
+            default:
+                System.out.println("Неверные данные");
+                return BigDecimal.valueOf(0);
+        }
+        return ans;
     }
 
-    public static double roman(int unit, double value){
-        return 0;
+    public static BigDecimal roman(int unit, BigDecimal value){
+        return BigDecimal.valueOf(0);
     }
 }
 
